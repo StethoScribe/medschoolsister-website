@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MedSchoolSister</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f3e7e9 0%, #e3eeff 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            background: #fff;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            color: #6d6875;
+            margin-bottom: 10px;
+        }
+        .quote {
+            font-style: italic;
+            font-size: 24px;
+            color: #8a675c;
+            margin-bottom: 30px;
+        }
+        .sidebar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 250px;
+            background: #9a8c98;
+            padding: 20px;
+            color: white;
+            display: none;
+            transition: all 0.3s ease-in-out;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #6d6875;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .close-btn {
+            background: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .content-section {
+            display: none;
+            margin-top: 20px;
+            background: #f8f6f4;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">X</button>
+        <ul>
+            <li><a href="#" onclick="showSection('biochem')">Biochem Mnemonics</a></li>
+            <li><a href="#" onclick="showSection('patho')">Patho Mnemonics</a></li>
+            <li><a href="#" onclick="showSection('pharm')">Pharm Mnemonics</a></li>
+            <li><a href="#" onclick="showSection('physio')">Physio Mnemonics</a></li>
+            <li><a href="#" onclick="showSection('micro')">Micro Mnemonics</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Welcome to MedSchoolSister</h1>
+        <p class="quote">“Success is no accident. It is hard work, perseverance, learning, and love for what you are doing.”</p>
+        <div id="biochem" class="content-section">
+            <h2>Biochemistry Mnemonics</h2>
+            <p>"Great Grandmother Throws Fresh Fruit Dish And Goes By Picking Pumpkins Pronto"</p>
+            <p>"LEO the lion says GER: Loss of Electrons is Oxidation, Gain of Electrons is Reduction"</p>
+            <p>"Fatty Liver Mnemonic: 'FAT RATS' - Fasting, Alcohol, Toxins, Refeeding, Acute fatty liver, TPN, Starvation"</p>
+        </div>
+        <div id="patho" class="content-section">
+            <h2>Pathology Mnemonics</h2>
+            <p>"HAMARTOMAS" mnemonic for tuberous sclerosis features.</p>
+            <p>"ABCDEF" for melanoma risk factors: Asymmetry, Border, Color, Diameter, Evolution, Funny looking</p>
+            <p>"NAGGING P" for chronic inflammation: Neoplasia, Autoimmune, Granuloma, Infection, Non-infectious, Genetic, Persistent</p>
+        </div>
+        <div id="pharm" class="content-section">
+            <h2>Pharmacology Mnemonics</h2>
+            <p>"A BEAM" for beta-blockers (Atenolol, Bisoprolol, Esmolol, Acebutolol, Metoprolol).</p>
+            <p>"SLUDGE" for cholinergic toxicity: Salivation, Lacrimation, Urination, Diarrhea, GI upset, Emesis</p>
+            <p>"ABCDE" for managing poisoning: Airway, Breathing, Circulation, Decontamination, Enhanced elimination</p>
+        </div>
+        <div id="physio" class="content-section">
+            <h2>Physiology Mnemonics</h2>
+            <p>"ABCDE" for primary survey in trauma.</p>
+            <p>"CALCIUM" for hypercalcemia causes: Cancer, Addison's, Lithium, Calcium excess, Immobilization, Unusual parathyroid, Milk-alkali</p>
+            <p>"RAAS" for renin-angiotensin-aldosterone system: Renin, Angiotensin, Aldosterone, Sodium</p>
+        </div>
+        <div id="micro" class="content-section">
+            <h2>Microbiology Mnemonics</h2>
+            <p>"Some Nasty Bugs May Live FacultativeLY" for facultative intracellular bacteria.</p>
+            <p>"BE SPOT" for encapsulated bacteria: Bacteroides, E. coli, Streptococcus, Pseudomonas, Haemophilus, Klebsiella</p>
+            <p>"Never Let Monkeys Eat Bananas" for WBC differential: Neutrophils, Lymphocytes, Monocytes, Eosinophils, Basophils</p>
+        </div>
+    </div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+        }
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
